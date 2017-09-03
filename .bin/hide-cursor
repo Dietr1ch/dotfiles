@@ -1,0 +1,2 @@
+#!/bin/sh
+unclutter  -idle 1 -jitter 5 -noevents&

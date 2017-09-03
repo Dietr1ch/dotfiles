@@ -1,0 +1,97 @@
+[user]
+	name = Dietrich Daroch
+	email = dietr1ch@acm.org
+	# signingkey = aoeuaoeuaoeuaoeu
+[core]
+	excludesfile = ~/.gitignore-global
+	pager = less -R -x2
+	editor = nvim
+	;gitproxy = gitproxy
+[push]
+	default = simple
+[color]
+	ui = 1
+	diff = true
+[alias]
+	a = add
+	ua = rm --cached
+	c = commit
+	f = fetch
+	cl = clone
+	co = checkout
+	br = branch
+	r = remote -v
+	ra = remote add
+	branch-name = rev-parse --abbrev-ref HEAD
+	ls = "!sh -c 'git ls-tree --name-only -r $(git branch-name)'"
+	lsb = ls-tree --name-only -r
+	p = pull
+	pp = push
+	ppu = push --set-upstream
+	PP = push --force-with-lease
+	# Push the current branch to the remote "origin", and set it to track
+	# the upstream branch
+	publish = "!sh -c 'git push -u origin $(git branch-name)'"
+	# Delete the remote version of the current branch
+	unpublish = "!sh -c 'git push origin :$(git branch-name)'"
+	h = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+
+	# Ignore changes on a file. Useful for temporary changes to tracked files
+	ign = update-index --assume-unchanged
+	# Reverse the above
+	unign = update-index --no-assume-unchanged
+	# Show the files that are currently assume-unchanged
+	ignored = "!git ls-files -v | grep ^h | cut -c 3-"
+
+	lla = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%<(12)%ar)%C(reset)  %s% %C(dim white) - %an  %C(auto)%d%C(reset)' --all
+	ll = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%<(12)%ar)%C(reset)  %s% %C(dim white) - %an  %C(auto)%d%C(reset)'
+	la = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%<(12)%ar)%C(reset)  %s% %C(dim white) - %an  %C(auto)%d%C(reset)' --all
+	l = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%<(12)%ar)%C(reset)  %s% %C(dim white) - %an  %C(auto)%d%C(reset)'
+
+	s = status
+	ss = status .
+	d = diff
+	dw = diff --ignore-all-space
+	ds = diff --stat
+	dc = diff --cached
+	dcs = diff --cached --stat
+	e = "!exec "
+	exec = "!exec "
+[log]
+	decorate = full
+
+
+;KDE Git repos
+[url "git://anongit.kde.org/"]
+	insteadOf = kde:
+[url "git@git.kde.org:"]
+	pushInsteadOf = kde:
+
+;Github
+[url "git@github.com:"]
+	insteadOf = "gh:"
+	pushInsteadOf = "https://github.com/"
+	pushInsteadOf = "http://github.com/"
+	pushInsteadOf = "git://github.com/"
+	pushInsteadOf = "gh:"
+
+;BitBucket
+[url "git@bitbucket.org:"]
+	insteadOf = "bb:"
+	pushInsteadOf = "https://bitbucket.org/"
+	pushInsteadOf = "http://bitbucket.org/"
+	pushInsteadOf = "git://bitbucket.org/"
+	pushInsteadOf = "bb:"
+
+;gist
+[url "git@gist.github.com:"]
+	pushInsteadOf = "gist:"
+	pushInsteadOf = "git://gist.github.com/"
+[url "git://gist.github.com/"]
+	insteadOf = "gist:"
+[url "git@git.kde.org:"]
+	pushInsteadOf = kde:
+[github]
+	user = Dietr1ch
+	# password = asdf123
+	# oauth-token = aoeuaoeuaoeuaoeuaoeuaoeuaoeuaoeuaoeuaoeu

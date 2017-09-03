@@ -1,0 +1,7 @@
+#!/bin/sh
+# Alt_L=BackSpace
+# Shift_L=Escape
+# Shift_R=Escape
+## Control_L=Meta_L|F10
+xcape -e 'Alt_L=BackSpace;Shift_L=Escape;Shift_R=Escape'
+
