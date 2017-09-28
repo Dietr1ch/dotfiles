@@ -1,0 +1,37 @@
+! Unmap capslock
+clear Lock
+
+! mod2 = meta/win
+! mod3 = super/win
+! mod4 = hyper
+
+! keycode 37 = Hyper_L
+keycode 37 = Mode_switch
+
+keycode 65 = space underscore space space space space space space
+keycode 66 = Control_L
+keycode 108 = Multi_key
+
+keycode 45 = t T Down Down
+keycode 31 = c C Up Up
+keycode 44 = h H Left Left
+keycode 46 = n N Right Right
+
+! Mod1: Meta
+clear Mod1
+add Mod1 = Meta_L
+add Mod1 = Meta_R
+! Mod2: -
+clear Mod2
+add Mod2 = space
+! Mod3: Hyper
+clear Mod3
+add Mod3 = Hyper_L
+add Mod3 = Hyper_R
+! Mod4: Super / Win
+clear Mod4
+add Mod4 = Super_L
+add Mod4 = Super_R
+clear control
+add control = Control_L
+add control = Control_R
