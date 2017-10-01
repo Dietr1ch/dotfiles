@@ -1,21 +1,21 @@
-! Unmap capslock
-clear Lock
-
-! mod2 = meta/win
-! mod3 = super/win
-! mod4 = hyper
-
-! keycode 37 = Hyper_L
-keycode 37 = Mode_switch
-
-keycode 65 = space underscore space space space space space space
-keycode 66 = Control_L
+! Use Alt_R as Compose key áßÿ°♯ø
 keycode 108 = Multi_key
 
+! Use CapsLock as Control_L
+clear Lock
+keycode 66 = Control_L
+
+! Use Left Control as Mode_switch
+keycode 37 = Mode_switch
+! Customize Mode_switch keys
+keycode 65 = space underscore space space space space space space
 keycode 45 = t T Down Down
 keycode 31 = c C Up Up
 keycode 44 = h H Left Left
 keycode 46 = n N Right Right
+! keycode 30 = g G Home Home
+! keycode 32 = o O End End
+
 
 ! Mod1: Meta
 clear Mod1
