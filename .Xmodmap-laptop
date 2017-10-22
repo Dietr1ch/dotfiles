@@ -13,25 +13,30 @@ keycode 45 = t T Down Down
 keycode 31 = c C Up Up
 keycode 44 = h H Left Left
 keycode 46 = n N Right Right
-! keycode 30 = g G Home Home
-! keycode 32 = o O End End
+keycode 30 = g G Home Home
+keycode 32 = r R End End
 
-
-! Mod1: Meta
 clear Mod1
-add Mod1 = Meta_L
-add Mod1 = Meta_R
-! Mod2: -
 clear Mod2
-add Mod2 = space
-! Mod3: Hyper
 clear Mod3
-add Mod3 = Hyper_L
-add Mod3 = Hyper_R
-! Mod4: Super / Win
 clear Mod4
-add Mod4 = Super_L
-add Mod4 = Super_R
+
+! Control
 clear control
-add control = Control_L
-add control = Control_R
+add control = Control_L Control_R
+
+! Mod0: Meta
+! clear Mod1
+add Mod1 = Meta_L Meta_R
+
+! Mod2: -
+! clear Mod2
+add Mod2 = space
+
+! Mod3: Hyper
+! clear Mod3
+add Mod3 = Hyper_L Hyper_R
+
+! Mod4: Super / Win
+! clear Mod4
+add Mod4 = Super_L Super_R
