@@ -16,27 +16,23 @@ keycode 46 = n N Right Right
 keycode 30 = g G Home Home
 keycode 32 = r R End End
 
+clear control
 clear Mod1
 clear Mod2
 clear Mod3
 clear Mod4
 
 ! Control
-clear control
 add control = Control_L Control_R
 
-! Mod0: Meta
-! clear Mod1
+! Mod1: Meta
 add Mod1 = Meta_L Meta_R
 
 ! Mod2: -
-! clear Mod2
 add Mod2 = space
 
 ! Mod3: Hyper
-! clear Mod3
 add Mod3 = Hyper_L Hyper_R
 
 ! Mod4: Super / Win
-! clear Mod4
 add Mod4 = Super_L Super_R
