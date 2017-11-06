@@ -1,0 +1,131 @@
+
+# Paths
+directory:  ~/Music
+library:    ~/.config/beets/beets-library.blb
+pluginpath: ~/.config/beets/plugins
+
+mpd:
+    host: localhost
+    port: 6600
+
+
+# Beets Settings
+format_item:       $artist / $original_year - $album / $title
+format_album: $albumartist / $original_year - $album
+threaded: yes
+ignore: .AppleDouble ._* *~ .DS_Store
+
+ui:
+    color: yes
+
+plugins:
+    bpd
+    chroma
+    the
+    inline
+    web
+    fetchart
+    embedart
+    lyrics
+    missing
+    duplicates
+    ftintitle
+    scrub
+    convert
+    mbcollection
+    lastgenre
+    mpdstats
+    random
+#artistcountry
+
+## Covers
+art_filename: cover
+fetchart:
+    google_search: true
+
+## Lyrics
+lyrics:
+    auto: yes
+    fallback: 'No lyrics found'
+
+
+
+
+
+# Metadata
+## Echonest
+echonest:
+    auto: yes
+
+## Musicbrainz
+musicbrainz:
+    user: dietr1ch
+    pass: asdf123
+
+## LastGenre
+lastgenre:
+    count: 3
+    min_weight: 35
+embedart:
+    auto: yes
+    maxwidth: 200
+
+## Convert
+convert:
+    copy_album_art: true
+    embed: true
+    max_bitrate: 320
+    threads: 8
+    format: aq0mp3
+    formats:
+        aac-std:
+            command: ffmpeg -i $source -n -b:a 128k $dest
+            extension: aac
+        aac4:
+            command: ffmpeg -i $source -c:a libfdk_aac -vbr 4 -n -strict -2 $dest
+            extension: aac
+        aac5:
+            command: ffmpeg -i $source -c:a libfdk_aac -vbr 5 -n -strict -2 $dest
+            extension: aac
+        opus:
+            command: ffmpeg -i $source -n -c:a libopus -b:a 320k $dest
+            extension: opus
+        320opus:
+            command: ffmpeg -i $source -n -c:a libopus -b:a 320k $dest
+            extension: 320.opus
+        256opus:
+            command: ffmpeg -i $source -n -c:a libopus -b:a 256k $dest
+            extension: 256.opus
+        192opus:
+            command: ffmpeg -i $source -n -c:a libopus -b:a 192k $dest
+            extension: 192.opus
+        aq2mp3:
+            command: ffmpeg -i $source -y -vn -aq 2 $dest
+            extension: mp3
+        aq0mp3:
+            command: ffmpeg -i $source -y -vn -aq 0 $dest
+            extension: mp3
+    paths:
+        default: %the{$albumartist}/$original_year - $album%aunique{}/$disc-$track $title
+
+## MPD Stats
+mpdstats:
+    rating_mix: 0.95
+
+
+
+
+# Library Settings
+per_disc_numbering: yes
+original_year: yes
+
+import:
+    move: yes
+    languages: en es
+
+paths:
+    default:              %the{$albumartist}/$original_year - $album%aunique{}/$disc-$track $title
+    singleton:            Non-Album/$artist/$title
+    comp:                 Compilations/$album%aunique{}/$track $title
+    #albumtype:soundtrack: Soundtracks/$album/$track $title
+
