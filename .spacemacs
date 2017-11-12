@@ -453,11 +453,21 @@ you should place your code here."
 
 
   ;; Org-mode
+  (add-hook 'org-mode-hook
+            (lambda ()
+							;; Set up minted
+							(add-to-list 'org-latex-packages-alist '("" "minted"))
+              ;; Enable fill column indicator
+              (fci-mode t)
+              (setq fill-column 80)
+              ;; Turn off line numbering, it makes org so slow
+              (linum-mode -1)
+              ;; Enable automatic line wrapping at fill column
+              (auto-fill-mode t))
+						)
   (setq org-ref-default-bibliography '("~/Documents/Papers/references.bib")
         org-ref-pdf-directory          "~/Documents/Papers/"
         org-ref-bibliography-notes     "~/Documents/Papers/notes.org")
-  (add-hook 'org-mode-hook
-            (lambda () (add-to-list 'org-latex-packages-alist '("" "minted"))))
   (with-eval-after-load 'ox-latex
 
     ;; Use thesis classes
