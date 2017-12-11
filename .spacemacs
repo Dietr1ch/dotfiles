@@ -69,7 +69,7 @@ values."
             c-c++-default-mode-for-headers 'c++-mode
 						)
      cscope
-     ;; clojure
+     clojure
      d
      emacs-lisp
      ;;;erlang
@@ -83,11 +83,12 @@ values."
                  js2-basic-offset 2
                  js-indent-level 2
                  )
+		 lisp
      python
      ruby
      rust
-     scala
-     ;; scheme
+     ;; scala
+     scheme
      extra-langs
 
 
@@ -404,7 +405,7 @@ values."
    ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
    ;; over any automatically added closing parenthesis, bracket, quote, etc…
    ;; This can be temporary disabled by pressing `C-q' before `)'. (default nil)
-   dotspacemacs-smart-closing-parenthesis t
+   dotspacemacs-smart-closing-parenthesis nil
    ;; Select a scope to highlight delimiters. Possible values are `any',
    ;; `current', `all' or `nil'. Default is `all' (highlight any scope and
    ;; emphasis the current one). (default 'all)
@@ -415,7 +416,7 @@ values."
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `ag', `pt', `ack' and `grep'.
    ;; (default '("ag" "pt" "ack" "grep"))
-   dotspacemacs-search-tools '("ag" "pt" "ack" "grep")
+   dotspacemacs-search-tools '("pt" "ag" "ack" "grep")
    ;; The default package repository used if no explicit repository has been
    ;; specified with an installed package.
    ;; Not used for now. (default nil)
