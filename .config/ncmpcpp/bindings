@@ -581,3 +581,15 @@ def_key "J"
     move_sort_order_down
 def_key "K"
     move_sort_order_up
+
+
+# def_key "space"
+#     pause
+def_key "up"
+    volume_up
+def_key "down"
+    volume_down
+def_key "right"
+  seek_forward
+def_key "left"
+  seek_backward
