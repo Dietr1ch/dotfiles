@@ -83,7 +83,6 @@ values."
                  js2-basic-offset 2
                  js-indent-level 2
                  )
-		 lisp
      python
      ruby
      rust
