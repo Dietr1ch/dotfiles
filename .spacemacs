@@ -468,39 +468,56 @@ you should place your code here."
   (setq org-ref-default-bibliography '("~/Documents/Papers/references.bib")
         org-ref-pdf-directory          "~/Documents/Papers/"
         org-ref-bibliography-notes     "~/Documents/Papers/notes.org")
-  (with-eval-after-load 'ox-latex
 
-    ;; Use thesis classes
-    ;; TODO: move to dir-locals
-    (add-to-list 'org-latex-classes
-                 '("puc"
-                   "\\documentclass{pucthesis}"
-                   ("\\chapter{%s}" . "\\chapter*{%s}")
-                   ("\\section{%s}" . "\\section*{%s}")
-                   ("\\subsection{%s}" . "\\subsection*{%s}")
-                   ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-                   ("\\paragraph{%s}" . "\\paragraph*{%s}")
-                   ;; ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
-                   ))
+	(with-eval-after-load 'org
+		;; Babel
+		(org-babel-do-load-languages
+		 'org-babel-load-languages
+		 '(
+			 (emacs-lisp  . t)
+			 (haskell  . t)
+			 (sql  . t)
+			 (sh  . t)
+			 (python  . t)
+			 (C  . t)
+			 ))
 
-    ;; Format tags
-    (defun org-latex-format-headline-simple-keywords-function
-        (todo todo-type priority text tags info)
-      (concat
-       (cond
-        ((string= todo "TODO")   (and todo (format "%s " todo)))
-        ((string= todo "DONE")   (and todo (format "%s " todo)))
-        ((string= todo "REVIEW") (and todo (format "%s " todo)))
-        )
-       (and priority (format "\\#%c " priority))
-       text
-       (and tags
-            (format ":%s:"
-                    (mapconcat (lambda (tag) (org-latex-plain-text tag info))
-                               tags ":")))))
+		;; Thesis config
+		;; TODO: move to dir-locals
+		;; Format tags
+		(defun org-latex-format-headline-simple-keywords-function
+				(todo todo-type priority text tags info)
+			(concat
+			 (cond
+				((string= todo "TODO")   (and todo (format "%s " todo)))
+				((string= todo "DONE")   (and todo (format "%s " todo)))
+				((string= todo "REVIEW") (and todo (format "%s " todo)))
+				)
+			 (and priority (format "\\#%c " priority))
+			 text
+			 (and tags
+						(format ":%s:"
+										(mapconcat (lambda (tag) (org-latex-plain-text tag info))
+															 tags ":")))))
 
-    (setq org-latex-format-headline-function 'org-latex-format-headline-simple-keywords-function)
-    )
+		(setq org-latex-format-headline-function 'org-latex-format-headline-simple-keywords-function)
+
+		;; LaTeX
+		;; Use thesis classes
+		(with-eval-after-load 'ox-latex
+			(add-to-list 'org-latex-classes
+									'("puc"
+										"\\documentclass{pucthesis}"
+										("\\chapter{%s}" . "\\chapter*{%s}")
+										("\\section{%s}" . "\\section*{%s}")
+										("\\subsection{%s}" . "\\subsection*{%s}")
+										("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+										("\\paragraph{%s}" . "\\paragraph*{%s}")
+										;; ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
+										))
+			)
+		)
+
 
 
   ;; Text
