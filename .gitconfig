@@ -19,6 +19,7 @@
 	am = commit --amend
 	f = fetch
 	cl = clone
+	CL = clone --recursive
 	co = checkout
 	br = branch
 	r = remote -v
