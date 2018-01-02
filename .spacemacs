@@ -88,7 +88,7 @@ values."
      rust
      ;; scala
      scheme
-     extra-langs
+     ;; extra-langs
 
 
      ;; Query languages
@@ -482,7 +482,7 @@ you should place your code here."
 			 (C  . t)
 			 ))
 
-		;; Thesis config
+		;; LaTeX thesis configuration
 		;; TODO: move to dir-locals
 		;; Format tags
 		(defun org-latex-format-headline-simple-keywords-function
@@ -502,11 +502,10 @@ you should place your code here."
 
 		(setq org-latex-format-headline-function 'org-latex-format-headline-simple-keywords-function)
 
-		;; LaTeX
-		;; Use thesis classes
+		;; Define PUC LaTeX class
 		(with-eval-after-load 'ox-latex
 			(add-to-list 'org-latex-classes
-									'("puc"
+									'("PUC"
 										"\\documentclass{pucthesis}"
 										("\\chapter{%s}" . "\\chapter*{%s}")
 										("\\section{%s}" . "\\section*{%s}")
@@ -524,7 +523,7 @@ you should place your code here."
   (spacemacs/toggle-truncate-lines-on)
   (add-hook 'text-mode-hook 'spacemacs/toggle-visual-line-navigation-on)
 
-  (setq-default indent-tabs-mode t)
+  ;; (setq-default indent-tabs-mode t)
   (setq-default tab-width 2)
 
 
