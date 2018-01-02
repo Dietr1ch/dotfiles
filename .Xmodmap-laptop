@@ -8,7 +8,8 @@ keycode 66 = Control_L
 ! Use Left Control as Mode_switch
 keycode 37 = Mode_switch
 ! Customize Mode_switch keys
-keycode 65 = space underscore space space space space space space
+keycode 65 = space space space space space space space space
+! keycode 65 = space underscore space space space space space space
 keycode 45 = t T Down Down
 keycode 31 = c C Up Up
 keycode 44 = h H Left Left
