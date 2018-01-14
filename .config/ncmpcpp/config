@@ -472,7 +472,7 @@ allow_for_physical_item_deletion = no
 #
 #search_engine_default_search_mode = 1
 #
-#external_editor = nano
+external_editor = nvim
 #
 ## Note: set to yes if external editor is a console application.
 ##
