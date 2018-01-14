@@ -1,0 +1,19 @@
+
+# Config
+# ======
+source-file ~/.config/tmux/bindings
+source-file ~/.config/tmux/theme
+
+# Resize based on active clients only
+setw -g aggressive-resize on
+
+# History
+set -g history-limit 100000
+
+# Use mouse
+set -g mouse on
+# Don't rename windows automatically
+set-option -g allow-rename off
+
+# Quick escape
+set -sg escape-time 0

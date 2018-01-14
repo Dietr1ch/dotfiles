@@ -1,0 +1,24 @@
+bind-key r source-file ~/.tmux.conf \; display-message "Reloaded!"
+bind-key -T prefix space choose-tree -s
+bind-key -T prefix S new-session\; command-prompt -I "#S" "rename-session '%%'"
+bind-key -T prefix t new-window -c "#{pane_current_path}"
+bind-key -T prefix T new-window
+bind-key -T prefix c clock-mode
+# vi Bindings
+set-window-option -g mode-keys vi
+bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+# vi Bindings - Panes
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
+bind-key -T prefix b select-pane -t :.+
+bind-key -T prefix h select-pane -L
+bind-key -T prefix l select-pane -R
+bind-key -T prefix k select-pane -U
+bind-key -T prefix j select-pane -D
+# vi Bindings - Windows
+bind-key -T prefix H previous-window
+bind-key -T prefix L next-window
+bind-key -T prefix w last-window
+bind-key -T prefix tab last-window
+
+source-file ~/.config/tmux/bindings-local
