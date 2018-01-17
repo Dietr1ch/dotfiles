@@ -30,7 +30,7 @@
 #
 ## Needed for tag editor and file operations to work.
 ##
-#mpd_music_dir = ~/music
+mpd_music_dir = ~/Music
 #
 #mpd_crossfade_time = 5
 #
@@ -325,13 +325,13 @@
 #
 ## Available values: classic, alternative.
 ##
-#user_interface = classic
+user_interface = alternative
 #
 #data_fetching_delay = yes
 #
 ## Available values: artist, album_artist, date, genre, composer, performer.
 ##
-#media_library_primary_tag = artist
+media_library_primary_tag = album_artist
 #
 #media_library_albums_split_by_date = yes
 #
@@ -359,7 +359,7 @@ follow_now_playing_lyrics = yes
 #
 fetch_lyrics_for_current_song_in_background = yes
 #
-#store_lyrics_in_song_dir = no
+store_lyrics_in_song_dir = yes
 #
 #generate_win32_compatible_filenames = yes
 #
@@ -454,7 +454,7 @@ allow_for_physical_item_deletion = no
 #
 #media_library_sort_by_mtime = no
 #
-#enable_window_title = yes
+enable_window_title = yes
 #
 ##
 ## Note: You can choose default search mode for search engine. Available modes
