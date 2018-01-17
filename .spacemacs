@@ -67,7 +67,7 @@ values."
      (c-c++ :variables
             c-c++-enable-clang-support t
             c-c++-default-mode-for-headers 'c++-mode
-						)
+            )
      cscope
      clojure
      d
@@ -83,7 +83,9 @@ values."
                  js2-basic-offset 2
                  js-indent-level 2
                  )
-     python
+     (python :variables
+             python-sort-imports-on-save t
+             )
      ruby
      rust
      ;; scala
@@ -161,7 +163,9 @@ values."
             shell-default-term-shell "/usr/bin/fish")
      shell-scripts
 
-		 ranger
+     ranger
+
+     systemd
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -455,16 +459,17 @@ you should place your code here."
   ;; Org-mode
   (add-hook 'org-mode-hook
             (lambda ()
-							;; Set up minted
-							(add-to-list 'org-latex-packages-alist '("" "minted"))
+              ;; Set up minted
+              (add-to-list 'org-latex-packages-alist '("" "minted"))
               ;; Enable fill column indicator
               (fci-mode t)
               (setq fill-column 80)
               ;; Turn off line numbering, it makes org so slow
               (linum-mode -1)
               ;; Enable automatic line wrapping at fill column
-              (auto-fill-mode t))
-						)
+              (auto-fill-mode t)
+              )
+            )
   (setq org-ref-default-bibliography '("~/Documents/Papers/references.bib")
         org-ref-pdf-directory          "~/Documents/Papers/"
         org-ref-bibliography-notes     "~/Documents/Papers/notes.org")
