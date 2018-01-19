@@ -449,6 +449,7 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  (setq custom-file (concat (file-name-directory dotspacemacs-filepath) ".emacs-customize.el"))
 
   ;; Fixes
   (add-hook 'prog-mode-hook 'semantic-mode)
