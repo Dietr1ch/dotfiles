@@ -455,6 +455,7 @@ you should place your code here."
   (add-hook 'prog-mode-hook 'semantic-mode)
   (add-hook 'd-mode-hook 'flycheck-dmd-dub-set-variables)
   (setq x-select-enable-clipboard nil)
+  (setq tramp-use-ssh-controlmaster-options nil)
 
 
   ;; Org-mode
