@@ -22,15 +22,6 @@ set -g status-justify centre
 set -g message-command-fg blue
 set -g message-command-bg black
 
-# loud or quiet?
-set-option -g visual-activity off
-set-option -g visual-bell on
-set-option -g visual-silence on
-set-window-option -g monitor-activity on
-set-option -g bell-action none
-
-set -g default-terminal "screen-256color"
-
 # Modes {
 setw -g clock-mode-colour $STATUS_BAR
 setw -g mode-attr bold
