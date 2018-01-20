@@ -87,7 +87,9 @@ values."
              python-sort-imports-on-save t
              )
      ruby
-     rust
+     (rust :variables
+           rust-format-on-save t
+           )
      ;; scala
      scheme
      ;; extra-langs
