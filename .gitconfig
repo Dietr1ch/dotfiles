@@ -22,8 +22,9 @@
 	CL = clone --recursive
 	co = checkout
 	br = branch
-	r = remote -v
-	ra = remote add
+	r = rebase -i
+	rc = rebase --continue
+	ra = remote --abort
 	branch-name = rev-parse --abbrev-ref HEAD
 	ls = "!sh -c 'git ls-tree --name-only -r $(git branch-name)'"
 	lsb = ls-tree --name-only -r
