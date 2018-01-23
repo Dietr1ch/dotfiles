@@ -5,7 +5,9 @@ bind-key -T prefix t new-window -c "#{pane_current_path}"
 bind-key -T prefix T new-window
 bind-key -T prefix c clock-mode
 
-bind-key -T prefix s set-window-option monitor-activity off \; display-message "Disabled Monitoring!"
+# Custom bindings
+bind C-m command-prompt -p "man" "split-window -h 'exec man %%'"
+bind-key -T prefix Z set-window-option monitor-activity off \; display-message "Disabled Monitoring!"
 
 # vi Bindings
 set-window-option -g mode-keys vi
@@ -25,5 +27,6 @@ bind-key -T prefix H previous-window
 bind-key -T prefix L next-window
 bind-key -T prefix w last-window
 bind-key -T prefix tab last-window
+
 
 source-file ~/.config/tmux/bindings-local

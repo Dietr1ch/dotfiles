@@ -1,0 +1,4 @@
+[submodule ".config/tmux/tpm"]
+	path = .config/tmux/tpm
+	url = https://github.com/tmux-plugins/tpm
+	branch = master
