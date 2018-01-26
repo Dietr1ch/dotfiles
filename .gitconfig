@@ -18,6 +18,7 @@
 	c = commit
 	am = commit --amend
 	f = fetch
+	fa = fetch --all
 	cl = clone
 	CL = clone --recursive
 	co = checkout
