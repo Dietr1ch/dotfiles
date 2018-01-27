@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: log_info
+# key: li
+# --
+LOG(INFO) << $1;
+$0

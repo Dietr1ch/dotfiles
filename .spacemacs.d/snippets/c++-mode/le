@@ -1,0 +1,5 @@
+# name: log_error
+# key: le
+# --
+LOG(ERROR) << $1;
+$0

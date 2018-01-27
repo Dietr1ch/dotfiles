@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: unpack_status
+# key: us
+# --
+const auto& ${1:what} = ${2:$1_status}.ValueOrDie();
+$0

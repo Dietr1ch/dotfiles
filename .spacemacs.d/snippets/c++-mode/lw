@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: log_warning
+# key: lw
+# --
+LOG(WARNING) << $1;
+$0

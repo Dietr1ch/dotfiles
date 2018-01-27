@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: lock
+# key: lock
+# --
+{
+  MutexLock l(&$1);
+  $2
+}
