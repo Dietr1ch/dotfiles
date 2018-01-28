@@ -1,6 +1,9 @@
 # -*- mode: snippet -*-
-# name: cin
+# name: Status or info
 # key: sti
 # --
-std::cin >>
+const Status ${1:container}_status = ${2:SomeOutcome()};
+if (!$1_status.ok()) {
+  LOG(INFO) << ${3:log_message};
+}
 $0
