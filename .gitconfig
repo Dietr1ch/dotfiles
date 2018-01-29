@@ -25,8 +25,9 @@
 	br = branch
 	r = rebase -i
 	rc = rebase --continue
-	ra = remote --abort
+	ra = rebase --abort
 	branch-name = rev-parse --abbrev-ref HEAD
+	rv = remote -v
 	ls = "!sh -c 'git ls-tree --name-only -r $(git branch-name)'"
 	lsb = ls-tree --name-only -r
 	p = pull
