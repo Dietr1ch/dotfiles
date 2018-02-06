@@ -1,4 +1,8 @@
-#name : namespace ...
+# -*- mode: snippet -*-
+# name: namespace
 # key: ns
 # --
-namespace 
+namespace ${1:name} {
+$0
+
+}  // namespace $1

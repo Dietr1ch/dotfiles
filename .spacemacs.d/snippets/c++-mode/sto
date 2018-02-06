@@ -1,6 +1,12 @@
 # -*- mode: snippet -*-
-# name: cout
+# name: StatusOr
 # key: sto
 # --
-std::cout <<
+const auto ${1:container}_statusor = ${2:SomeOutcome()};
+if (!$1_statusor.ok()) {
+  ${3:log}
+  return ${1:container}_statusor.status();
+}
+
+const auto& ${1:container} = ${1:container}_statusor.ValueOrDie();
 $0

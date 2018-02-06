@@ -3,5 +3,5 @@
 # key: msg
 # --
 message ${1:Name} {
-        $0
+  $0
 }
