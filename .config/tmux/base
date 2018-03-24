@@ -20,12 +20,15 @@ set-option -g bell-action none
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @plugin 'tmux-plugins/tmux-copycat'
 set -g @plugin 'tmux-plugins/tmux-open'
 set -g @plugin 'tmux-plugins/tmux-yank'
 
 # Tmux-resurrect
 set -g @resurrect-processes 'ssh mosh'
+# Tmux-continuum
+set -g @continuum-restore 'on'
 
 # Other examples:
 # set -g @plugin 'github_username/plugin_name'
