@@ -126,9 +126,9 @@ This function should only modify configuration layer settings."
           org-deadline-warning-days 28
           org-agenda-span 10
           org-agenda-files '(
-                             "~/Documents/Self.org"
-                             "~/Documents/U.org"
-                             "~/Documents/agenda.org"
+                             "~/Documents/Org/Self.org"
+                             "~/Documents/Org/U.org"
+                             "~/Documents/Org/agenda.org"
                              )
 
           ;; Items
@@ -160,7 +160,6 @@ This function should only modify configuration layer settings."
 
 
      ;; Version control
-     ;; version-control
      (git :variables
           magit-repository-directories '("~/Projects/"))
      github
@@ -188,13 +187,13 @@ This function should only modify configuration layer settings."
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(
                                       sparql-mode
-
+                                      ;;
                                       cmake-ide
                                       google-c-style
-
+                                      ;;
                                       doom-themes
                                       all-the-icons
-
+                                      ;;
                                       fish-mode
                                       protobuf-mode
                                       )
@@ -503,7 +502,7 @@ It should only modify the values of Spacemacs settings."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers 'relative
+   dotspacemacs-line-numbers nil
 
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
