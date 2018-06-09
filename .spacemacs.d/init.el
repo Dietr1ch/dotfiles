@@ -197,6 +197,9 @@ This function should only modify configuration layer settings."
                                       ;;
                                       fish-mode
                                       protobuf-mode
+                                      ;;
+                                      writeroom-mode
+                                      writegood-mode
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
