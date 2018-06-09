@@ -605,6 +605,10 @@ before packages are loaded."
   (setq tramp-use-ssh-controlmaster-options nil)
 
 
+  ;; Bindings
+  (spacemacs/declare-prefix "DEL" "DEL prefix")
+  (spacemacs/set-leader-keys "DEL SPC" 'helm-semantic)
+
   ;; Org-mode
   (add-hook 'org-mode-hook
             (lambda ()
