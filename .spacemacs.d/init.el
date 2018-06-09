@@ -328,9 +328,8 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '(
-                               "Source Code Pro for Powerline"
-                               :size   10
+   dotspacemacs-default-font '("Source Code Pro for Powerline"
+                               :size   11
                                :weight semi-bold
                                :width  semi-condensed
                                :powerline-scale 1.1)
@@ -524,6 +523,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-highlight-delimiters 'all
 
    ;; If non-nil, start an Emacs server if one is not already running.
+   ;; (default nil)
    dotspacemacs-enable-server t
 
    ;; If non-nil, advise quit functions to keep server open when quitting.
@@ -580,6 +580,13 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+  )
+
+(defun dotspacemacs/user-load ()
+  "Library to load while dumping.
+This function is called while dumping Spacemacs configuration. You can
+`require' or `load' the libraries of your choice that will be included
+in the dump."
   )
 
 (defun dotspacemacs/user-config ()
