@@ -40,6 +40,7 @@ This function should only modify configuration layer settings."
 
      ;; Completion
      helm
+     lsp
      (auto-completion :variables
                       auto-completion-return-key-behavior 'complete
                       auto-completion-tab-key-behavior 'cycle
