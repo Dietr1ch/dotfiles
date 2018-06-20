@@ -638,7 +638,6 @@ before packages are loaded."
 			 (emacs-lisp  . t)
 			 (haskell  . t)
 			 (sql  . t)
-			 (sh  . t)
 			 (python  . t)
 			 (C  . t)
 			 ))
