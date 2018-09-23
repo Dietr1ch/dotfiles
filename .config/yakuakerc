@@ -5,6 +5,9 @@ UseWMAssist=false
 [Desktop Entry]
 DefaultProfile=Mine.profile
 
+[Dialogs]
+FirstRun=false
+
 [Favorite Profiles]
 Favorites=Mine.profile
 
