@@ -660,51 +660,51 @@ before packages are loaded."
                                    (file+headline "~/org/notes.org" "Inbox")
                                    "* %? [[%:link][%:description]] \nCaptured On: %U")))
 
-		;; Babel
-		(org-babel-do-load-languages
-		 'org-babel-load-languages
-		 '(
-			 (emacs-lisp  . t)
-			 (haskell  . t)
-			 (sql  . t)
-			 (python  . t)
-			 (C  . t)
-			 ))
+    ;; Babel
+    (org-babel-do-load-languages
+     'org-babel-load-languages
+     '(
+       (emacs-lisp  . t)
+       (haskell  . t)
+       (sql  . t)
+       (python  . t)
+       (C  . t)
+       ))
 
-		;; LaTeX thesis configuration
-		;; TODO: move to dir-locals
-		;; Format tags
-		(defun org-latex-format-headline-simple-keywords-function
-				(todo todo-type priority text tags info)
-			(concat
-			 (cond
-				((string= todo "TODO")   (and todo (format "%s " todo)))
-				((string= todo "DONE")   (and todo (format "%s " todo)))
-				((string= todo "REVIEW") (and todo (format "%s " todo)))
-				)
-			 (and priority (format "\\#%c " priority))
-			 text
-			 (and tags
-						(format ":%s:"
-										(mapconcat (lambda (tag) (org-latex-plain-text tag info))
-															 tags ":")))))
+    ;; LaTeX thesis configuration
+    ;; TODO: move to dir-locals
+    ;; Format tags
+    (defun org-latex-format-headline-simple-keywords-function
+        (todo todo-type priority text tags info)
+      (concat
+       (cond
+        ((string= todo "TODO")   (and todo (format "%s " todo)))
+        ((string= todo "DONE")   (and todo (format "%s " todo)))
+        ((string= todo "REVIEW") (and todo (format "%s " todo)))
+        )
+       (and priority (format "\\#%c " priority))
+       text
+       (and tags
+            (format ":%s:"
+                    (mapconcat (lambda (tag) (org-latex-plain-text tag info))
+                               tags ":")))))
 
-		(setq org-latex-format-headline-function 'org-latex-format-headline-simple-keywords-function)
+    (setq org-latex-format-headline-function 'org-latex-format-headline-simple-keywords-function)
 
-		;; Define PUC LaTeX class
-		(with-eval-after-load 'ox-latex
-			(add-to-list 'org-latex-classes
-									'("PUC"
-										"\\documentclass{pucthesis}"
-										("\\chapter{%s}" . "\\chapter*{%s}")
-										("\\section{%s}" . "\\section*{%s}")
-										("\\subsection{%s}" . "\\subsection*{%s}")
-										("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-										("\\paragraph{%s}" . "\\paragraph*{%s}")
-										;; ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
-										))
-			)
-		)
+    ;; Define PUC LaTeX class
+    (with-eval-after-load 'ox-latex
+      (add-to-list 'org-latex-classes
+                  '("PUC"
+                    "\\documentclass{pucthesis}"
+                    ("\\chapter{%s}" . "\\chapter*{%s}")
+                    ("\\section{%s}" . "\\section*{%s}")
+                    ("\\subsection{%s}" . "\\subsection*{%s}")
+                    ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                    ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                    ;; ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
+                    ))
+      )
+    )
 
 
 
