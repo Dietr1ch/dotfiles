@@ -187,6 +187,7 @@ This function should only modify configuration layer settings."
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(
+                                      lsp-rust
                                       sparql-mode
                                       ;;
                                       cmake-ide
@@ -615,10 +616,20 @@ before packages are loaded."
   (setq x-select-enable-clipboard nil)
   (setq tramp-use-ssh-controlmaster-options nil)
 
+  (require 'lsp-ui)
+  (add-hook 'lsp-mode-hook 'lsp-ui-mode)
 
   ;; Bindings
   (spacemacs/declare-prefix "DEL" "DEL prefix")
   (spacemacs/set-leader-keys "DEL SPC" 'helm-semantic)
+
+  ;; Rust
+  (with-eval-after-load 'lsp-mode
+      (setq lsp-rust-rls-command '("rustup" "run" "nightly" "rls"))
+      (require 'lsp-rust))
+  (add-hook 'rust-mode-hook #'lsp-rust-enable)
+  (add-hook 'rust-mode-hook #'flycheck-mode)
+  (add-hook 'prog-major-mode #'lsp-prog-major-mode-enable)
 
   ;; Org-mode
   (add-hook 'org-mode-hook
