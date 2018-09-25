@@ -590,7 +590,6 @@ It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
 
   (server-start)
-  (require 'org-protocol)
 
   )
 
@@ -632,6 +631,12 @@ before packages are loaded."
   (add-hook 'prog-major-mode #'lsp-prog-major-mode-enable)
 
   ;; Org-mode
+  (require 'org-protocol)
+
+  (require 'org)
+  (setq org-directory "~/Documents/Org")
+  (setq org-default-notes-file (concat org-directory "/TODO.org"))
+
   (add-hook 'org-mode-hook
             (lambda ()
               ;; Set up minted
@@ -654,10 +659,10 @@ before packages are loaded."
     ; Capture
     (add-to-list 'org-modules 'org-protocol)
     (setq org-capture-templates '(
-                                  ("p" "Protocol" entry (file+headline "~/org/notes.org" "Inbox")
+                                  ("p" "Protocol" entry (file+headline org-default-notes-file "Inbox")
                                    "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?")
                                   ("L" "Protocol Link" entry
-                                   (file+headline "~/org/notes.org" "Inbox")
+                                   (file+headline org-default-notes-file "Inbox")
                                    "* %? [[%:link][%:description]] \nCaptured On: %U")))
 
     ;; Babel
