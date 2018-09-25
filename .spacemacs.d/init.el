@@ -587,6 +587,10 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+
+  (server-start)
+  (require 'org-protocol)
+
   )
 
 (defun dotspacemacs/user-load ()
@@ -634,7 +638,17 @@ before packages are loaded."
         org-ref-pdf-directory          "~/Documents/Papers/"
         org-ref-bibliography-notes     "~/Documents/Papers/notes.org")
 
-	(with-eval-after-load 'org
+
+  (with-eval-after-load 'org
+    ; Capture
+    (add-to-list 'org-modules 'org-protocol)
+    (setq org-capture-templates '(
+                                  ("p" "Protocol" entry (file+headline "~/org/notes.org" "Inbox")
+                                   "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?")
+                                  ("L" "Protocol Link" entry
+                                   (file+headline "~/org/notes.org" "Inbox")
+                                   "* %? [[%:link][%:description]] \nCaptured On: %U")))
+
 		;; Babel
 		(org-babel-do-load-languages
 		 'org-babel-load-languages
