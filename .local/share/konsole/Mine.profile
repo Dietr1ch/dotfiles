@@ -1,6 +1,6 @@
 [Appearance]
 ColorScheme=DarkPastels
-Font=Noto Mono for Powerline,8,-1,5,50,0,0,0,0,0,Regular
+Font=Noto Mono for Powerline,9,-1,0,50,0,0,0,0,0,Regular
 
 [Cursor Options]
 CursorShape=0
