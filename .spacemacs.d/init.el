@@ -179,6 +179,7 @@ This function should only modify configuration layer settings."
      ranger
 
      systemd
+     nixos
      )
 
    ;; List of additional packages that will be installed without being
