@@ -81,10 +81,9 @@ This function should only modify configuration layer settings."
             )
      cmake
 
-     clojure
      d
      emacs-lisp
-     ;;;erlang
+     ; erlang
      (haskell :variables
               haskell-enable-ghc-mod-support t)
      idris
@@ -633,23 +632,25 @@ before packages are loaded."
   (add-hook 'prog-major-mode #'lsp-prog-major-mode-enable)
 
   ;; Org-mode
-  (require 'org-protocol)
-
   (require 'org)
-  (setq org-directory "~/Documents/Org")
-  (setq org-default-notes-file (concat org-directory "/TODO.org"))
+  (require 'org-protocol)
 
   (add-hook 'org-mode-hook
             (lambda ()
-              ;; Set up minted
-              (add-to-list 'org-latex-packages-alist '("" "minted"))
+              ;; Fixes
+              ;; Turn off line numbering, it makes org so slow
+              (linum-mode -1)
+
+              ;; Config
               ;; Enable fill column indicator
               (fci-mode t)
               (setq fill-column 80)
-              ;; Turn off line numbering, it makes org so slow
-              (linum-mode -1)
               ;; Enable automatic line wrapping at fill column
               (auto-fill-mode t)
+
+              ;; Setup
+              ;; Setup minted
+              (add-to-list 'org-latex-packages-alist '("" "minted"))
               )
             )
   (setq org-ref-default-bibliography '("~/Documents/Papers/references.bib")
@@ -659,6 +660,8 @@ before packages are loaded."
 
   (with-eval-after-load 'org
     ; Capture
+    (setq org-directory "~/Documents/Org/")
+    (setq org-default-notes-file (concat org-directory "TODO.org"))
     (add-to-list 'org-modules 'org-protocol)
     (setq org-capture-templates '(
                                   ("p" "Protocol" entry (file+headline org-default-notes-file "Inbox")
