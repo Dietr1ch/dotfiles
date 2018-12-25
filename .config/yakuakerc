@@ -9,7 +9,7 @@ DefaultProfile=Mine.profile
 FirstRun=false
 
 [Favorite Profiles]
-Favorites=Mine.profile
+Favorites=Mine.profile,Laptop.profile
 
 [Shortcuts]
 close-active-terminal=Ctrl+Shift+R

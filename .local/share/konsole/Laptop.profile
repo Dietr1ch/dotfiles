@@ -1,12 +1,9 @@
 [Appearance]
 ColorScheme=DarkPastels
-Font=Noto Mono for Powerline,7,-1,0,50,0,0,0,0,0
-
-[Cursor Options]
-CursorShape=0
+Font=Noto Mono for Powerline,8,-1,0,50,0,0,0,0,0
 
 [General]
-Name=Mine
+Name=Laptop
 Parent=FALLBACK/
 
 [Interaction Options]
