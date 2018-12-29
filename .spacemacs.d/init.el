@@ -99,6 +99,7 @@ This function should only modify configuration layer settings."
              )
      ruby
      (rust :variables
+           rust-backend 'lsp
            rust-format-on-save t
            )
      ;; scala
@@ -616,20 +617,9 @@ before packages are loaded."
   (setq x-select-enable-clipboard nil)
   (setq tramp-use-ssh-controlmaster-options nil)
 
-  (require 'lsp-ui)
-  (add-hook 'lsp-mode-hook 'lsp-ui-mode)
-
   ;; Bindings
   (spacemacs/declare-prefix "DEL" "DEL prefix")
   (spacemacs/set-leader-keys "DEL SPC" 'helm-semantic)
-
-  ;; Rust
-  (with-eval-after-load 'lsp-mode
-      (setq lsp-rust-rls-command '("rustup" "run" "nightly" "rls"))
-      (require 'lsp-rust))
-  (add-hook 'rust-mode-hook #'lsp-rust-enable)
-  (add-hook 'rust-mode-hook #'flycheck-mode)
-  (add-hook 'prog-major-mode #'lsp-prog-major-mode-enable)
 
   ;; Org-mode
   (require 'org)
