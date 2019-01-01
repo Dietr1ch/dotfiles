@@ -1,0 +1,11 @@
+[Unit]
+Description=SSH key agent
+
+[Service]
+Type=simple
+RuntimeDirectory=keyring
+Environment=SSH_AUTH_SOCK=%t/keyring/local_agent
+ExecStart=/usr/bin/ssh-agent -D -t 1m -a $SSH_AUTH_SOCK
+
+[Install]
+WantedBy=default.target
