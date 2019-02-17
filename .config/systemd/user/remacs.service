@@ -9,7 +9,7 @@ Documentation=info:remacs man:emacs(1) https://gnu.org/software/emacs/
 [Service]
 Type=simple
 ExecStart=/usr/bin/remacs --fg-daemon
-ExecStop=/usr/bin/remacsclient --eval "(kill-emacs)"
+ExecStop=/usr/bin/remacsclient --eval "(progn (recentf-save-list) (kill-emacs))"
 Environment=SSH_AUTH_SOCK=%t/keyring/local_agent
 Restart=always
 

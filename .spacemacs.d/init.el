@@ -617,6 +617,11 @@ before packages are loaded."
   (setq x-select-enable-clipboard nil)
   (setq tramp-use-ssh-controlmaster-options nil)
 
+  ;; Recentf exclusions
+  (with-eval-after-load 'recentf
+    (add-to-list 'recentf-exclude "\\.orig\\'")
+    )
+
   ;; Bindings
   (spacemacs/declare-prefix "DEL" "DEL prefix")
   (spacemacs/set-leader-keys "DEL SPC" 'helm-semantic)
