@@ -6,3 +6,7 @@
 	path = .emacs.d
 	url = https://github.com/syl20bnr/spacemacs
 	branch = develop
+[submodule ".config/awesome"]
+	path = .config/awesome
+	url = https://github.com/Dietr1ch/awesome-copycats.git
+	branch = mine
