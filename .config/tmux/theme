@@ -19,56 +19,37 @@ set -g status-interval 2
 set -g status-justify centre
 
 # messaging
-set -g message-command-fg blue
-set -g message-command-bg black
+set -g message-command-style fg=blue,bg=black
 
 # Modes {
 setw -g clock-mode-colour $STATUS_BAR
-setw -g mode-attr bold
-setw -g mode-fg colour196
-setw -g mode-bg $STATUS_BG_ACTIVE
+setw -g mode-style fg=colour196,bg=$STATUS_BG_ACTIVE,bold
 # }
 
 # Panes {
-set -g pane-border-fg $STATUS_BG_ACTIVE
-set -g pane-border-bg $STATUS_BG
-set -g pane-active-border-fg $STATUS_BAR
-set -g pane-active-border-bg $STATUS_BG
+set -g pane-border-style fg=$STATUS_BG_ACTIVE,bg=$STATUS_BG
+set -g pane-active-border-style fg=$STATUS_BAR,bg=$STATUS_BG
 # }
 
 # Statusbar {
 set -g status-position bottom
-set -g status-fg $STATUS_FG
-set -g status-bg $STATUS_BAR
-set -g status-attr dim
+set -g status-style fg=$STATUS_FG,bg=$STATUS_BAR,dim
 set -g status-left "#[bg=$STATUS_BG]#[fg=$DIMINISH]#H #[fg=$STATUS_FG,bold]#S#[bg=$STATUS_BAR,fg=$STATUS_BG]"
 set -g status-right "#[bg=$STATUS_BAR,fg=$STATUS_BG]#[bg=$STATUS_BG,fg=$STATUS_FG_ACTIVE,bold]%H:%M #[fg=$STATUS_FG_ACTIVE,nobold]%a %d/%m/%Y"
 set -g status-left-length 40
 set -g status-right-length 30
 
-setw -g window-status-current-fg $STATUS_FG_ACTIVE
-setw -g window-status-current-bg $STATUS_BG_ACTIVE
-setw -g window-status-current-attr bold
+setw -g window-status-current-style fg=$STATUS_FG_ACTIVE,bg=$STATUS_BG_ACTIVE,bold
 setw -g window-status-current-format "#[bg=$STATUS_BAR,fg=$STATUS_BG_ACTIVE]#[fg=$HIGHLIGHT,bg=$STATUS_BG_ACTIVE]#I #[fg=$STATUS_FG_ACTIVE]#W #[fg=$HIGHLIGHT_ALT]#F#[bg=$STATUS_BAR,fg=$STATUS_BG_ACTIVE]"
 
-setw -g window-status-fg $STATUS_FG
-setw -g window-status-bg $STATUS_BG
-setw -g window-status-attr none
 setw -g window-status-format " #[fg=$DIMINISH_ALT]#I #[fg=$STATUS_FG]#W #[fg=$DIMINISH_ALT]#F "
+setw -g window-status-style fg=$STATUS_FG,bg=$STATUS_BG,none
 
-setw -g window-status-activity-bg $STATUS_ALERT_FG
-setw -g window-status-activity-fg $STATUS_ALERT_BG
-setw -g window-status-activity-attr none
+setw -g window-status-activity-style fg=$STATUS_ALERT_BG,bg=$STATUS_ALERT_FG,none
 
-setw -g window-status-bell-attr bold
-setw -g window-status-bell-fg $STATUS_FG_ACTIVE
-setw -g window-status-bell-bg colour1
+setw -g window-status-bell-style fg=$STATUS_FG_ACTIVE,bg=colour1,bold
 # }
 
-# Messages {
-set -g message-attr bold
-set -g message-fg colour232
-set -g message-bg colour166
-# }
+set -g message-style fg=colour232,bg=colour166,bold
 
 source-file ~/.config/tmux/theme-local
