@@ -619,7 +619,9 @@ before packages are loaded."
 
   ;; Recentf exclusions
   (with-eval-after-load 'recentf
-    (add-to-list 'recentf-exclude "\\.orig\\'")
+    (add-to-list 'recentf-exclude "\\.orig$")
+    (add-to-list 'recentf-exclude "/\\.cache/")
+    (add-to-list 'recentf-exclude "^/tmp/")
     )
 
   ;; Bindings
