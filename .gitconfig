@@ -9,6 +9,8 @@
 	;gitproxy = gitproxy
 [push]
 	default = simple
+[pull]
+	ff = only
 [color]
 	ui = 1
 	diff = true
