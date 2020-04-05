@@ -6,7 +6,8 @@ source-file ~/.config/tmux/theme
 
 # Use truecolor
 set -g default-terminal "tmux-256color"
-set-option -ga terminal-overrides ",xterm-256color*:Tc:smso=^[[3m"
+#set-option -ga terminal-overrides ",xterm-256color*:Tc:smso=^[[3m"
+set -ga terminal-overrides ",alacritty:RGB"
 
 # Use mouse
 set -g mouse on
