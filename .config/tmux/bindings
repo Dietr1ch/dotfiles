@@ -14,7 +14,7 @@ bind-key -T prefix Z set-window-option monitor-activity off \; display-message "
 set-window-option -g mode-keys vi
 bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
 # vi Bindings - Panes
-bind-key -T prefix \ split-window -h -c "#{pane_current_path}"
+bind-key -T prefix '\' split-window -h -c "#{pane_current_path}"
 bind-key -T prefix - split-window -v -c "#{pane_current_path}"
 bind-key -T prefix C-v split-window -h -c "#{pane_current_path}"
 bind-key -T prefix C-- split-window -v -c "#{pane_current_path}"
